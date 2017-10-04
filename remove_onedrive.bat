@@ -19,6 +19,13 @@ set scriptpath=%~dp0
 set scriptpath=%scriptpath:~0,-1%
 echo scriptpath: %scriptpath%
 set lgpo="%scriptpath%\lgpo\lgpo.exe"
+if not exist %lgpo% (
+	echo The Group Policy tool was not found in
+	echo  %lgpo%^!
+	echo It is part of the 'Microsoft Security Compliance Toolkit':
+	echo https://www.microsoft.com/en-us/download/details.aspx?id=55319
+	exit /b
+)
 set regpol="%scriptpath%\remove_onedrive_registry.pol"
 if exist %regpol% (
 	%lgpo% /m %regpol%
