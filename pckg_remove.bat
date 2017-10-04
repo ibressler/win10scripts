@@ -1,6 +1,6 @@
 @echo off
 rem pckg_remove.bat
-rem Lists installed or provisioned Windows (modern app) packages.
+rem Removes installed or provisioned Windows (modern app) packages.
 rem Example: 'pckg_remove.bat xbox'
 rem   Removes the packages 'Microsoft.XboxApp', 'Microsoft.XboxGameOverlay',
 rem   'Microsoft.XboxIdentityProvider' and 'Microsoft.XboxSpeechToTextOverlay'
