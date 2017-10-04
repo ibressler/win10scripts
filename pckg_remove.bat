@@ -22,11 +22,18 @@ fltmc >nul 2>&1 && (
 )
 
 set "DBG="
+
+rem get a timestamp for creating multiple autostart files
+for /f "usebackq tokens=1,2 delims==" %%i in (`wmic os get LocalDateTime /VALUE 2^>NUL`) do if '.%%i.'=='.LocalDateTime.' set ldt=%%j
+rem echo TS0: '%ldt%'
+set ldt=%ldt:~0,4%-%ldt:~4,2%-%ldt:~6,2%-%ldt:~8,2%%ldt:~10,2%%ldt:~12,2%%ldt:~15,3%
+if defined DBG echo using timestamp '%ldt%'
+
 rem extracts usernames from between brackets [], mind the escape char ^
 set userpattern=\"\[^([^^^^\]]+^)\]\"
 set tmpfile=%TEMP%\_pckg_remove_tmp.txt
 rem add autostart script
-set autostartscript=AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\remove_packages.bat
+set autostartscript=AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\remove_packages_%ldt%.bat
 set users=
 setlocal enabledelayedexpansion
 for %%a in (%*) do (
