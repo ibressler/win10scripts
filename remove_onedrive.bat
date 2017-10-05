@@ -73,5 +73,5 @@ icacls %setupfile% /deny "NT SERVICE\TrustedInstaller":F
 pause
 dir %setupfile%
 icacls %setupfile%
-echo Should be zero size. Look, look, look, if not run again
+echo Should be zero size. If not, run again
 pause

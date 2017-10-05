@@ -13,14 +13,14 @@ fltmc >nul 2>&1 || (
 
 if "%*"=="" (
 	echo packages:
-	powershell -Command "& {get-appxpackage -AllUsers | select name;}"
+	powershell -Command "& {get-appxpackage -AllUsers | sort packagefullname | select name;}"
 
 	echo packages provisioned:
-	powershell -Command "& {get-appxprovisionedpackage -online | select displayname;}"
+	powershell -Command "& {get-appxprovisionedpackage -online | sort packagename | select displayname;}"
 ) else (
 	for %%p in (%*) do (
 		echo Searching for %%p:
-		powershell -Command "& {get-appxpackage -AllUsers | where-object {$_.name -like \"*%%p*\"}; }"
+		powershell -Command "& {get-appxpackage -AllUsers | sort packagefullname | where-object {$_.name -like \"*%%p*\"}; }"
 	)
 )
 
