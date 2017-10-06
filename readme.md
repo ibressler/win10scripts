@@ -16,7 +16,7 @@ Disables the (preinstalled) *Cortana*. First, *Cortana* is disabled for searchin
 
 ### Remove *OneDrive*
 
-	> remove_onedrive.bat
+	> onedrive_remove.bat
 
 Disables and removes the (preinstalled) *OneDrive*. First, *OneDrive* is deactivated for file storage by a group policy setting. Second, it is uninstalled with all related files and folders removed for the current user.
 

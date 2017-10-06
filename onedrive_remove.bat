@@ -1,5 +1,5 @@
 @echo off
-rem remove_onedrive.bat
+rem onedrive_remove.bat
 rem Disables and removes OneDrive from Windows 10.
 rem Inspired by https://answers.microsoft.com/en-us/onedrive/forum/odoptions-oddesktop/how-to-uninstall-onedrive-completely-in-windows-10/e735a3b8-09f1-40e2-89c3-b93cf7fe6994
 rem Tested with Win 10 Pro 64bit (1703).
