@@ -1,7 +1,8 @@
 @echo off
 rem remove_onedrive.bat
 rem Disables and removes OneDrive from Windows 10.
-rem Tested with Win 10 Pro 64bit.
+rem Inspired by https://answers.microsoft.com/en-us/onedrive/forum/odoptions-oddesktop/how-to-uninstall-onedrive-completely-in-windows-10/e735a3b8-09f1-40e2-89c3-b93cf7fe6994
+rem Tested with Win 10 Pro 64bit (1703).
 rem by Ingo Breßler in 2017 (dev at ingobressler.net)
 cls
 
@@ -26,7 +27,7 @@ if not exist %lgpo% (
 	echo https://www.microsoft.com/en-us/download/details.aspx?id=55319
 	exit /b
 )
-set regpol="%scriptpath%\remove_onedrive_registry.pol"
+set regpol="%scriptpath%\onedrive_registry.pol"
 if exist %regpol% (
 	%lgpo% /m %regpol%
 )
