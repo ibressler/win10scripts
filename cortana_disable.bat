@@ -2,7 +2,8 @@
 rem cortana_disable.bat
 rem Disables the cortana process and prevents it from restarting by moving
 rem cortana related folders from the SystemApps dir to a backup directory.
-rem Tested with Win 10 Pro 64bit.
+rem Inspired by https://superuser.com/a/949641
+rem Tested with Win 10 Pro 64bit (1703).
 rem by Ingo Breßler in 2017 (dev at ingobressler.net)
 cls
 

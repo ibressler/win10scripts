@@ -2,11 +2,17 @@
 
 ## Overview
 
-This is a collection of batch scripts intended for automating clean up of Windows, typically right after a fresh installation. They were developed and tested on Windows 10 Pro 64bit.
+This is a collection of batch scripts intended for automating clean up of Windows, typically right after a fresh installation. They were developed and tested on Windows 10 Pro 64bit (1703).
 
 Feel free to contribute where you see room for improvements or fixes!
 
 ## Contents
+
+### Disable *Cortana*
+
+    > cortana_disable.bat
+	
+Disables the (preinstalled) *Cortana*. First, *Cortana* is disabled for searching by a registry setting. Second, it is forced to shutdown with its installation folder being immediately moved to a backup folder which prevents it from restarting effectively.
 
 ### Remove *OneDrive*
 
