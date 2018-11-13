@@ -47,6 +47,14 @@ Removes all packages having 'name' in their package name (case-insensitive searc
 	
 A registry file, when applied, removes all folder shortcuts listed under *This PC* in Windows explorer.
 
+### Install a fully working *winhlp32* program on Win10
+
+    fix_winhlp32.cmd
+
+This script has to be run in a Windows console with *Administrator* priviledges. It expects the 32bit or 64bit Windows 8.1 update KB917607 to be present in the same folder. [It can be downloaded from Microsoft](https://microsoft.com/en-us/download/details.aspx?id=47671).
+
+The script extracts the appropriate *winhlp32.exe* from the update package, including necessary DLLs and language files and installs them to *%windir%* (typically *C:\Windows* and *C:\Windows\System32*).
+
 ## License
 
 [MIT License](license.txt)
