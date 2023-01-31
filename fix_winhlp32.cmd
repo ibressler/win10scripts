@@ -11,7 +11,10 @@
 
 setlocal enableExtensions
 
-%windir%\system32\reg.exe query "HKU\S-1-5-19" >nul 2>&1 || goto :eof
+%windir%\system32\reg.exe query "HKU\S-1-5-19" >nul 2>&1 || (
+  echo Administrator priviledges are required!
+  goto :quit
+)
 set arch=x86
 %windir%\system32\reg.exe query "hklm\software\microsoft\Windows NT\currentversion" /v buildlabex | find /i "amd64" 1>nul && set arch=x64
 cd /d "%~dp0"
@@ -19,9 +22,7 @@ cd /d "%~dp0"
 if not exist Windows8.1-KB917607-%arch%.msu (
   echo Windows8.1-KB917607-%arch%.msu was not found in the current folder
   echo.
-  echo Press any key to Exit
-  pause >nul
-  exit
+  goto :quit
 )
 
 if not exist "%windir%\servicing\packages\*Winhelp*.mum" (
@@ -103,6 +104,7 @@ rd /s /q .\temp >nul
 echo.
 echo Done.
 echo.
+:quit
 echo Press any key to Exit
 pause >nul
 exit /b
