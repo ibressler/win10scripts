@@ -61,8 +61,10 @@ takeown /f "%windir%\%lang%\winhlp32.exe.mui" >nul
 icacls     "%windir%\%lang%\winhlp32.exe.mui" /grant *S-1-5-32-544:F >nul
 copy /y %src32%\winhlp32.exe %windir%
 copy /y %lang32%\winhlp32.exe.mui %windir%\%lang%
+copy /y %lang32%\ftsrch.dll.mui %windir%\system32\%lang%
 icacls     "%windir%\winhlp32.exe" /setowner "NT Service\TrustedInstaller" >nul
 icacls     "%windir%\%lang%\winhlp32.exe.mui" /setowner "NT Service\TrustedInstaller" >nul
+icacls     "%windir%\system32\%lang%\ftsrch.dll.mui" /setowner "NT Service\TrustedInstaller" >nul
 ::icacls "%windir%" /restore "%temp%\AclFile" >nul
 ::del /f /q "%temp%\AclFile" >nul
 
@@ -94,8 +96,12 @@ takeown /f "%windir%\%lang%\winhlp32.exe.mui" >nul
 icacls     "%windir%\%lang%\winhlp32.exe.mui" /grant *S-1-5-32-544:F >nul
 copy /y %src64%\winhlp32.exe %windir%
 copy /y %lang64%\winhlp32.exe.mui %windir%\%lang%
+copy /y %lang64%\ftsrch.dll.mui %windir%\system32\%lang%
+copy /y %lang64%\ftsrch.dll.mui %windir%\syswow64\%lang%
 icacls     "%windir%\winhlp32.exe" /setowner "NT Service\TrustedInstaller" >nul
 icacls     "%windir%\%lang%\winhlp32.exe.mui" /setowner "NT Service\TrustedInstaller" >nul
+icacls     "%windir%\system32\%lang%\ftsrch.dll.mui" /setowner "NT Service\TrustedInstaller" >nul
+icacls     "%windir%\syswow64\%lang%\ftsrch.dll.mui" /setowner "NT Service\TrustedInstaller" >nul
 ::icacls "%windir%" /restore "%temp%\AclFile" >nul
 ::del /f /q "%temp%\AclFile" >nul
 
